@@ -7,7 +7,6 @@ public class ExistingDBScript : MonoBehaviour
     void Start()
     {
         var db = new DataService();
-
         foreach (var ss in db.DBUsers)
         {
             Debug.Log("User :" +ss.idUsers + " " + ss.Login);
