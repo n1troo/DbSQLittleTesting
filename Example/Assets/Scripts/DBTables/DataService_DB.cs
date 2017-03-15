@@ -14,13 +14,26 @@ public partial class DataService
         _connection.CreateTable<DBUserLevel>();
         _connection.CreateTable<DBTranning>();
 
+
+        var usr1 = CreateUser("Uzytkownik", "");
+        var usr1_lvl = CreateDefaultUserLvl(usr1);
+
+        var usr2 = CreateUser("Uzytkownik2", "");
+        var usr2_lvl = CreateDefaultUserLvl(usr2);
+
         _connection.InsertAll(new[]
         {
-            CreateUser("Uzytkownik",""),
-            CreateUser("Uzytkownik2","")
+            usr1,
+            usr2,
         });
 
-        Debug.LogAssertion("Utworzyłem tabele bazy dannych");
+        _connection.InsertAll(new[]
+       {
+            usr1_lvl,
+            usr2_lvl
+        });
+
+        Debug.LogWarning("Utworzyłem tabele bazy dannych");
     }
     private DBUsers CreateUser(string UserLogin, string UserPassword)
     {
@@ -32,6 +45,20 @@ public partial class DataService
         };
 
         return p;
+    }
+
+    private DBUserLevel CreateDefaultUserLvl(DBUsers user)
+    {
+        var t = new DBUserLevel
+        {
+            idUsers = user.idUsers,
+            TranningDay = 1,
+            TranningLevel = 1,
+            TranningSet = 1,
+            TranningWeek = 1,
+        };
+
+        return t;
     }
 }
 
