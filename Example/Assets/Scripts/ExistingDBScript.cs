@@ -1,18 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
+
 public class ExistingDBScript : MonoBehaviour
 {
-    public Text DebugText;
+    public Transform DebugPanel;
+    public GameObject DebugText;
+
+
     void Start()
     {
         var db = new DataService();
         foreach (var ss in db.DBUsers)
         {
-            Debug.Log("User :" +ss.idUsers + " " + ss.Login);
-        } 
+            GameObject Local = Instantiate(DebugText);
 
-        //ds.UpdateWpis(3, "Nowość wpis 002");
-        //ds.UpdateWpis(4, "Nowość wpis 002");
+            Local.GetComponentInChildren<Text>().text = "User: " + ss.idUsers + " " + ss.Login;
+            Local.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(ss); });
+            Local.transform.SetParent(DebugPanel);
+        }
+    }
+
+    private void ShowWhatWasCliked(DBUsers ss)
+    {
+        Debug.Log(ss.Login);
     }
 }
