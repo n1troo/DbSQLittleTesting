@@ -26,9 +26,19 @@ public class ExistingDBScript : MonoBehaviour
 
     private void ShowWhatWasCliked(DBUsers user)
     {
-        ResultPanel.DetachChildren();
+
+        if(ResultPanel.transform.childCount > 0)
+        {
+            foreach (Transform ss in ResultPanel)
+            {
+                GameObject.DestroyObject(ss.gameObject);
+            }
+        }
+        
         GameObject localResult = Instantiate(ResultBox);
-        foreach (var ss in localResult.GetComponents<Text>())
+        localResult.name = user.Login;
+
+        foreach (Text ss in localResult.GetComponentsInChildren<Text>())
         {
             if (ss.name == "Text_idUser")
             {
