@@ -27,7 +27,24 @@ public partial class DataService
             usr2_lvl
         });
 
+        CreateTranningTable();
+
         Debug.LogWarning("Utworzyłem tabele bazy dannych");
+    }
+
+    private void CreateTranningTable()
+    {
+
+        _connection.Execute("");
+        var day1 = new DBTranning
+        {
+            Level   = 1,
+            Wekk    = 1,
+            Day     = 1,
+            Set     = 1,
+            Reps    = 1,
+        };
+        
     }
 
     private DBUsers CreateUser(string UserLogin, string UserPassword)
