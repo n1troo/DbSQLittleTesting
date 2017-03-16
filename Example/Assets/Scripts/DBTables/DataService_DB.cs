@@ -15,17 +15,11 @@ public partial class DataService
         _connection.CreateTable<DBTranning>();
 
 
-        var usr1 = CreateUser("Uzytkownik", "");
+        var usr1 = CreateUser("Uzytkownik", "ABC");
         var usr1_lvl = CreateDefaultUserLvl(usr1);
 
-        var usr2 = CreateUser("Uzytkownik2", "");
+        var usr2 = CreateUser("Uzytkownik2", "CBA");
         var usr2_lvl = CreateDefaultUserLvl(usr2);
-
-        _connection.InsertAll(new[]
-        {
-            usr1,
-            usr2,
-        });
 
         _connection.InsertAll(new[]
        {
@@ -35,6 +29,7 @@ public partial class DataService
 
         Debug.LogWarning("Utworzyłem tabele bazy dannych");
     }
+
     private DBUsers CreateUser(string UserLogin, string UserPassword)
     {
         var p = new DBUsers
@@ -43,6 +38,9 @@ public partial class DataService
             Password = UserPassword,
             AddDate = DateTime.Now
         };
+
+        int id = _connection.Insert(p);
+        p = _connection.Table<DBUsers>().Where(s => s.Login == UserLogin).FirstOrDefault();
 
         return p;
     }
