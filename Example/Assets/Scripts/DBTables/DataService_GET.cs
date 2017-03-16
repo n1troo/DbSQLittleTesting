@@ -10,14 +10,7 @@ public partial class DataService
         return Context.Table<DBUserLevel>();
     }
 
-    public IEnumerable<DBUsers> DBUsers
-    {
-        get
-        {
-            return getDBUsers();
-        }
-    }
-    public IEnumerable<DBUsers> getDBUsers()
+    public IEnumerable<DBUsers> GetDBUsers()
     {
         return Context.Table<DBUsers>();
     }

@@ -5,23 +5,36 @@ using System;
 
 public class ExistingDBScript : MonoBehaviour
 {
-    public Transform DebugPanel;
+    public Transform HeaderPanel;
     public Transform ResultPanel;
-    public GameObject HeaderBox;
+
+    public GameObject HeaderDateBox;
     public GameObject ResultBox;
+    public GameObject TimeBox;
 
 
     void Start()
     {
-        var db = new DataService();
-        foreach (var ss in db.DBUsers)
-        {
-            GameObject Local = Instantiate(HeaderBox);
+        //TODO: Ddodac obslugę jaki to user zostal wybrany, zalogowany
 
-            Local.GetComponentInChildren<Text>().text = "User: " + ss.idUsers + " " + ss.Login;
-            Local.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(ss); });
-            Local.transform.SetParent(DebugPanel);
-        }
+        AddPanelObjects();
+        //Local.GetComponentInChildren<Text>().text = "User: " + ss.idUsers + " " + ss.Login;
+        //Local.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(ss); });
+    }
+
+    /// <summary>
+    /// Dodawanie obiektów do panelów
+    /// </summary>
+    private void AddPanelObjects()
+    {
+        int idUser = 1;
+        GameObject Local = Instantiate(HeaderDateBox);
+        Local.GetComponent<HeaderDateStatus>().SetValues(idUser);
+        Local.transform.SetParent(HeaderPanel);
+
+        GameObject LocalTimeBox = Instantiate(TimeBox);
+        LocalTimeBox.transform.SetParent(ResultPanel);
+
     }
 
     private void ShowWhatWasCliked(DBUsers user)
