@@ -29,7 +29,7 @@ public class ExistingDBScript : MonoBehaviour
     {
         int idUser = 1;
         GameObject Local = Instantiate(HeaderDateBox);
-        Local.GetComponent<HeaderDateStatus>().SetValues(idUser);
+        Local.GetComponent<HeaderDateBox>().SetValues(idUser);
         Local.transform.SetParent(HeaderPanel);
 
         GameObject LocalTimeBox = Instantiate(TimeBox);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class HeaderDateStatus : MonoBehaviour
+public class HeaderDateBox : MonoBehaviour
 {
     public UnityEngine.UI.Text WeekText;
     public UnityEngine.UI.Text DayText;
