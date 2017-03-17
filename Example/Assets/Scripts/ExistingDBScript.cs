@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
+using SQLite4Unity3d;
+using System.Linq;
 
 public class ExistingDBScript : MonoBehaviour
 {
@@ -35,6 +37,16 @@ public class ExistingDBScript : MonoBehaviour
         GameObject LocalTimeBox = Instantiate(TimeBox);
         LocalTimeBox.transform.SetParent(ResultPanel);
 
+
+        var db = new DataService();
+        DBUserLevel usrLvl = db.DBUserLevel().Where(s => s.idUsers == idUser).FirstOrDefault();
+
+        foreach (DBTranning ss in db.GetDBTranningsByLvl(usrLvl))
+        {
+            GameObject LocalResult = Instantiate(ResultBox);
+            LocalResult.GetComponent<ResultBox>().SetTranning(ss);
+            LocalResult.transform.SetParent(ResultPanel);
+        }
     }
 
     private void ShowWhatWasCliked(DBUsers user)
