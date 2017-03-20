@@ -24,6 +24,11 @@ public class ExistingDBScript : MonoBehaviour
         //Local.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(ss); });
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
+    }
+
     /// <summary>
     /// Dodawanie obiektów do panelów
     /// </summary>
