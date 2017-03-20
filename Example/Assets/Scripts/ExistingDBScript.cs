@@ -14,14 +14,22 @@ public class ExistingDBScript : MonoBehaviour
     public GameObject ResultBox;
     public GameObject TimeBox;
 
+    public Text VersionText;
+
 
     void Start()
     {
         //TODO: Ddodac obslugę jaki to user zostal wybrany, zalogowany
 
         AddPanelObjects();
+        SetVersion();
         //Local.GetComponentInChildren<Text>().text = "User: " + ss.idUsers + " " + ss.Login;
         //Local.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(ss); });
+    }
+
+    private void SetVersion()
+    {
+        VersionText.text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
     }
 
     private void Update()
