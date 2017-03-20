@@ -32,10 +32,10 @@ public class ExistingDBScript : MonoBehaviour
         int idUser = 1;
         GameObject Local = Instantiate(HeaderDateBox);
         Local.GetComponent<HeaderDateBox>().SetValues(idUser);
-        Local.transform.SetParent(HeaderPanel);
+        Local.transform.SetParent(HeaderPanel.transform,false);
 
         GameObject LocalTimeBox = Instantiate(TimeBox);
-        LocalTimeBox.transform.SetParent(ResultPanel);
+        LocalTimeBox.transform.SetParent(ResultPanel.transform,false);
 
 
         var db = new DataService();
@@ -45,7 +45,7 @@ public class ExistingDBScript : MonoBehaviour
         {
             GameObject LocalResult = Instantiate(ResultBox);
             LocalResult.GetComponent<ResultBox>().SetTranning(ss);
-            LocalResult.transform.SetParent(ResultPanel);
+            LocalResult.transform.SetParent(ResultPanel.transform,false);
         }
     }
 
