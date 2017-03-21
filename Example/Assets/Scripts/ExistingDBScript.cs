@@ -13,8 +13,10 @@ public class ExistingDBScript : MonoBehaviour
     public GameObject HeaderDateBox;
     public GameObject ResultBox;
     public GameObject TimeBox;
-
+    
     public Text VersionText;
+
+    private GameObject LocalTimeBox;
 
 
     void Start()
@@ -47,7 +49,8 @@ public class ExistingDBScript : MonoBehaviour
         Local.GetComponent<HeaderDateBox>().SetValues(idUser);
         Local.transform.SetParent(HeaderPanel.transform,false);
 
-        GameObject LocalTimeBox = Instantiate(TimeBox);
+        LocalTimeBox = Instantiate(TimeBox);
+        LocalTimeBox.GetComponent<TimerScript>().FireEvent += ExistingDBScript_FireEvent;
         LocalTimeBox.transform.SetParent(ResultPanel.transform,false);
 
 
@@ -58,37 +61,48 @@ public class ExistingDBScript : MonoBehaviour
         {
             GameObject LocalResult = Instantiate(ResultBox);
             LocalResult.GetComponent<ResultBox>().SetTranning(ss);
+            LocalResult.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(LocalResult,ss); });
             LocalResult.transform.SetParent(ResultPanel.transform,false);
         }
     }
 
-    private void ShowWhatWasCliked(DBUsers user)
+    private void ShowWhatWasCliked(GameObject localResult, DBTranning ss)
     {
-
-        if(ResultPanel.transform.childCount > 0)
-        {
-            foreach (Transform ss in ResultPanel)
-            {
-                GameObject.DestroyObject(ss.gameObject);
-            }
-        }
-        
-        GameObject localResult = Instantiate(ResultBox);
-        localResult.name = user.Login;
-
-        foreach (Text ss in localResult.GetComponentsInChildren<Text>())
-        {
-            if (ss.name == "Text_idUser")
-            {
-                ss.GetComponent<Text>().text = "ID: " + user.idUsers.ToString();
-            }
-            if (ss.name == "Text_AddDate")
-            {
-                ss.GetComponent<Text>().text = "AddDate: " + user.AddDate.ToString();
-            }
-        }
-
-        localResult.transform.SetParent(ResultPanel);
-
+        this.LocalTimeBox.gameObject.GetComponent<TimerScript>().StartTimer(localResult, ss);
     }
+
+    private void ExistingDBScript_FireEvent(object sender, EventArgs e)
+    {
+        //throw new NotImplementedException();
+    }
+
+    //private void ShowWhatWasCliked(DBTranning dbTranning)
+    //{
+
+    //    //if(ResultPanel.transform.childCount > 0)
+    //    //{
+    //    //    foreach (Transform ss in ResultPanel)
+    //    //    {
+    //    //        GameObject.DestroyObject(ss.gameObject);
+    //    //    }
+    //    //}
+        
+    //    //GameObject localResult = Instantiate(ResultBox);
+    //    //localResult.name = user.Login;
+
+    //    //foreach (Text ss in localResult.GetComponentsInChildren<Text>())
+    //    //{
+    //    //    if (ss.name == "Text_idUser")
+    //    //    {
+    //    //        ss.GetComponent<Text>().text = "ID: " + user.idUsers.ToString();
+    //    //    }
+    //    //    if (ss.name == "Text_AddDate")
+    //    //    {
+    //    //        ss.GetComponent<Text>().text = "AddDate: " + user.AddDate.ToString();
+    //    //    }
+    //    //}
+
+    //    //localResult.transform.SetParent(ResultPanel);
+
+    //}
 }
