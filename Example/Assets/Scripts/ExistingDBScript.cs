@@ -18,6 +18,7 @@ public class ExistingDBScript : MonoBehaviour
 
     private GameObject LocalTimeBox;
 
+    public static DBUsers LoggedUser { get; set; }
 
     void Start()
     {
@@ -43,21 +44,21 @@ public class ExistingDBScript : MonoBehaviour
     /// Dodawanie obiektów do panelów
     /// </summary>
     private void AddPanelObjects()
-    {
-        int idUser = 1;
+    {   
+        
+        LoggedUser = DataService.db.GetDbDBUsersByID(1);
+
         GameObject Local = Instantiate(HeaderDateBox);
-        Local.GetComponent<HeaderDateBox>().SetValues(idUser);
+        Local.GetComponent<HeaderDateBox>().SetValues(LoggedUser);
         Local.transform.SetParent(HeaderPanel.transform,false);
 
         LocalTimeBox = Instantiate(TimeBox);
         LocalTimeBox.GetComponent<TimerScript>().FireEvent += ExistingDBScript_FireEvent;
         LocalTimeBox.transform.SetParent(ResultPanel.transform,false);
 
+        //DBUserLevel usrLvl = db.DBUserLevel().Where(s => s.idUsers == idUser).FirstOrDefault();
 
-        var db = new DataService();
-        DBUserLevel usrLvl = db.DBUserLevel().Where(s => s.idUsers == idUser).FirstOrDefault();
-
-        foreach (DBTranning ss in db.GetDBTranningsByLvl(usrLvl))
+        foreach (DBTranning ss in LoggedUser.DBUserLevel.DBTranning)
         {
             GameObject LocalResult = Instantiate(ResultBox);
             LocalResult.GetComponent<ResultBox>().SetTranning(ss);

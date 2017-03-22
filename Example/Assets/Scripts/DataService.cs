@@ -13,22 +13,30 @@ public partial class DataService
     public String DatabaseName = "pushUpsGO.db";
     private SQLiteConnection _connection;
 
-    protected SQLiteConnection Context
+    private static DataService _db;
+    public static DataService db
     {
         get
         {
-            if (_connection == null)
+            if(_db == null)
             {
-                _connection = DataBase();
-                if (_connection.GetTableInfo("DBUsers").Count == 0)
-                {
-                    CreateDBRunTables(_connection);
-                }
+                _db = new DataService();
             }
-            return _connection;
+            return _db;
         }
     }
-    private SQLiteConnection DataBase()
+    public DataService()
+    {
+        if (_connection == null)
+        {
+            _connection = ConnectDataBase();
+            if (_connection.GetTableInfo("DBUsers").Count == 0)
+            {
+                CreateDBRunTables(_connection);
+            }
+        }
+    }
+    private SQLiteConnection ConnectDataBase()
     {
         #region CHECK WHAT VERSION IS THIS (dbPath)
 #if UNITY_EDITOR

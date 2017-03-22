@@ -7,11 +7,11 @@ public partial class DataService
 {
     private void UpdateDBUsers(DBUsers uDane)
     {
-        Context.Update(uDane);
+        //DataService.db.Update(uDane);
     }
     private void UpdateDBUsers(DBUserLevel uDane)
     {
-        Context.Update(uDane);
+        //Context.Update(uDane);
     }
 }
 
