@@ -360,7 +360,7 @@ public partial class DataService
             AddDate = DateTime.Now
         };
 
-        int id = _connection.Insert(p);
+        _connection.Insert(p);
         p = _connection.Table<DBUsers>().Where(s => s.Login == UserLogin).FirstOrDefault();
 
         return p;

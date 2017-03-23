@@ -15,26 +15,19 @@ public class DBUserLevel : DataService
     public int TranningLevel { get; set; }
     public int TranningSet { get; set; }
 
-
-    /// <summary>
-    /// Pobiera odpowiedni zestaw treningowy dla danego uzytkownika
-    /// DAY, WEEK, LEVEL
-    /// </summary>
-    /// <param name="l"></param>
-    /// <returns></returns>
-    [Ignore]
-    public IEnumerable<DBTranning> DBTranning
-    {
-        get
-        {
-            DBUsers l = DataService.db.GetDbDBUsersByID(idUsers);
-            return l.DBUserLevel.DBTranning.Where
-                (
-                    s => s.Day == l.DBUserLevel.TranningDay &&
-                    s.Level == l.DBUserLevel.TranningLevel &&
-                    s.Wekk == l.DBUserLevel.TranningWeek
-                ).OrderBy(s => (int)s.Set);
-        }
-    }
+    //[Ignore]
+    //public IEnumerable<DBTranning> DBTranning
+    //{
+    //    get
+    //    {
+    //        DBUsers l = DataService.db.GetDbDBUsersByID(idUsers);
+    //        return l.DBUserLevel.DBTranning.Where
+    //            (
+    //                s => s.Day == l.DBUserLevel.TranningDay &&
+    //                s.Level == l.DBUserLevel.TranningLevel &&
+    //                s.Wekk == l.DBUserLevel.TranningWeek
+    //            ).OrderBy(s => (int)s.Set);
+    //    }
+    //}
 
 }

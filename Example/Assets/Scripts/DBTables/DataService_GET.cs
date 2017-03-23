@@ -14,16 +14,24 @@ public partial class DataService
     {
         return DataService.db._connection.Table<DBUsers>();
     }
-    public IEnumerable<DBTranning> GetDBTrannings()
+
+    public IEnumerable<DBTranning> GetDBTranningsAll()
     {
-        return DataService.db._connection.Table<DBTranning>().ToArray();
+        return DataService.db._connection.Table<DBTranning>();
     }
+
     public DBUsers GetDbDBUsersByID(int idUsers)
     {
         return DataService.db._connection.Table<DBUsers>().Where(x => x.idUsers == idUsers).FirstOrDefault();
     }
-    public DBUserLevel GetDbUserLevelByID(int idUserLevel)
+
+    public IEnumerable<DBTranning> GetUserDBTranning(DBUsers l)
     {
-        return DataService.db._connection.Table<DBUserLevel>().Where(x => x.idUserLevel == idUserLevel).FirstOrDefault();
+        return DataService.db.GetDBTranningsAll()
+            .Where(
+                s => s.Day == l.DBUserLevel.TranningDay &&
+                s.Level == l.DBUserLevel.TranningLevel &&
+                s.Wekk == l.DBUserLevel.TranningWeek
+                ).OrderBy(s => (int)s.Set);
     }
 }

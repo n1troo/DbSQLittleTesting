@@ -6,7 +6,6 @@ using System;
 using System.Collections;
 using System.IO;
 #endif
-using System.Collections.Generic;
 
 public partial class DataService
 {
@@ -21,17 +20,20 @@ public partial class DataService
             if(_db == null)
             {
                 _db = new DataService();
+                _db.DataServiceRunDB();
             }
             return _db;
         }
     }
-    public DataService()
+
+    public void DataServiceRunDB()
     {
         if (_connection == null)
         {
             _connection = ConnectDataBase();
             if (_connection.GetTableInfo("DBUsers").Count == 0)
             {
+                Debug.LogWarning("Zakładam baze danych!");
                 CreateDBRunTables(_connection);
             }
         }
