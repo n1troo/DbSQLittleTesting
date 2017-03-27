@@ -12,6 +12,7 @@ public class HeaderDateBox : MonoBehaviour
 
     public void SetValues(DBUsers dbUser)
     {
+        
         this.WeekText.text = "WEEK: " + dbUser.DBUserLevel.TranningWeek.ToString();
         this.DayText.text = "DAY: " + dbUser.DBUserLevel.TranningDay.ToString();
         

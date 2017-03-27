@@ -41,7 +41,5 @@ public class TimerScript : MonoBehaviour
     public void StartTimer(GameObject localResult, DBTranning ss)
     {
         StartCoroutine(TimerStart(localResult));
-        
-
     }
 }

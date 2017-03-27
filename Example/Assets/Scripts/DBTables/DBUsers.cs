@@ -18,4 +18,9 @@ public partial class DBUsers
             return DataService.db.DBUserLevel(this.idUsers);
         }
     }
+
+    [Ignore]
+    public int ActualSetPositon { get; set; }
+
+   
 }

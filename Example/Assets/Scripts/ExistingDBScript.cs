@@ -37,7 +37,10 @@ public class ExistingDBScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     /// <summary>
@@ -66,7 +69,29 @@ public class ExistingDBScript : MonoBehaviour
 
     private void ShowWhatWasCliked(GameObject localResult, DBTranning ss)
     {
-        this.LocalTimeBox.gameObject.GetComponent<TimerScript>().StartTimer(localResult, ss);
+        if (CheckSetPosition(ss))
+        {
+            this.LocalTimeBox.gameObject.GetComponent<TimerScript>().StartTimer(localResult, ss);
+            localResult.GetComponent<ResultBox>().DestroyButton();
+        }
+        else
+        {
+            Debug.Log("Bledny SET!");
+        }
+    }
+
+    private bool CheckSetPosition(DBTranning ss)
+    {
+        if (LoggedUser.ActualSetPositon <= ss.Set)
+        {
+            LoggedUser.ActualSetPositon += ss.Set + 1;  
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 
     private void ExistingDBScript_FireEvent(object sender, EventArgs e)
