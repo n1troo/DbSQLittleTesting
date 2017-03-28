@@ -71,8 +71,8 @@ public class ExistingDBScript : MonoBehaviour
     {
         if (CheckSetPosition(ss))
         {
-            this.LocalTimeBox.gameObject.GetComponent<TimerScript>().StartTimer(localResult, ss);
             localResult.GetComponent<ResultBox>().DestroyButton();
+            this.LocalTimeBox.gameObject.GetComponent<TimerScript>().StartTimer(localResult, ss);
         }
         else
         {
@@ -82,9 +82,16 @@ public class ExistingDBScript : MonoBehaviour
 
     private bool CheckSetPosition(DBTranning ss)
     {
-        if (LoggedUser.ActualSetPositon <= ss.Set)
+        Debug.Log(LoggedUser.ActualSetPositon);
+        if(LoggedUser.ActualSetPositon == 0 && ss.Set == 1)
         {
-            LoggedUser.ActualSetPositon += ss.Set + 1;  
+            LoggedUser.ActualSetPositon = 2;
+            return transform;
+        }
+
+        if (LoggedUser.ActualSetPositon == ss.Set)
+        {
+            LoggedUser.ActualSetPositon++;
             return true;
         }
         else
