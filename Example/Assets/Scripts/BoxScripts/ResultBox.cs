@@ -4,22 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ResultBox : MonoBehaviour
+public class ResultBox : AutoReferencer<ResultBox>
 {
-    public Text TextSet;
-    public Text TextReps;
-    public Button Button;
+    public Text Text_Set;
+    public Text Text_Reps;
+    public Button ButtonRest;
+    public bool TimerInProgress;
+    public event EventHandler OnDestroyButton;
 
     public void SetTranning(DBTranning ss)
     {
-        TextSet.text = "Set: "+ ss.Set.ToString();
-        TextReps.text = "Reps: " + ss.Reps.ToString();
-
+        Text_Set.text = "Set: "+ ss.Set.ToString();
+        Text_Reps.text = "Reps: " + ss.Reps.ToString();
     }
 
     public void DestroyButton()
     {
         Debug.Log("Destroy button!");
-        DestroyImmediate(Button.gameObject);
+        DestroyImmediate(ButtonRest.gameObject);
+
+        if (OnDestroyButton != null)
+            OnDestroyButton(this, null);
     }
 }

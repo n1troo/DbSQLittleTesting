@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class HeaderDateBox : MonoBehaviour
+public class HeaderDateBox : AutoReferencer<HeaderDateBox>
 {
     public UnityEngine.UI.Text WeekText;
     public UnityEngine.UI.Text DayText;
+
     // Use this for initialization
 
     public void SetValues(DBUsers dbUser)

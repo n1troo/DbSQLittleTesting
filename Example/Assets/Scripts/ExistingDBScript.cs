@@ -19,6 +19,7 @@ public class ExistingDBScript : MonoBehaviour
     private GameObject LocalTimeBox;
 
     public static DBUsers LoggedUser { get; set; }
+    
 
     void Start()
     {
@@ -61,17 +62,20 @@ public class ExistingDBScript : MonoBehaviour
         foreach (DBTranning ss in DataService.db.GetUserDBTranning(LoggedUser))
         {
             GameObject LocalResult = Instantiate(ResultBox);
-            LocalResult.GetComponent<ResultBox>().SetTranning(ss); 
+            LocalResult.GetComponentInChildren<ResultBox>().SetTranning(ss); 
             LocalResult.GetComponentInChildren<Button>().onClick.AddListener(delegate () { ShowWhatWasCliked(LocalResult, ss); });
             LocalResult.transform.SetParent(ResultPanel.transform, false);
         }
     }
 
+
+
     private void ShowWhatWasCliked(GameObject localResult, DBTranning ss)
     {
+        Debug.Log(LoggedUser.TimerInProgress);
         if (CheckSetPosition(ss))
-        {
-            localResult.GetComponent<ResultBox>().DestroyButton();
+        { 
+            localResult.GetComponentInChildren<ResultBox>().DestroyButton();
             this.LocalTimeBox.gameObject.GetComponent<TimerScript>().StartTimer(localResult, ss);
         }
         else
@@ -82,17 +86,22 @@ public class ExistingDBScript : MonoBehaviour
 
     private bool CheckSetPosition(DBTranning ss)
     {
-        Debug.Log(LoggedUser.ActualSetPositon);
-        if(LoggedUser.ActualSetPositon == 0 && ss.Set == 1)
+        if (!LoggedUser.TimerInProgress)
         {
-            LoggedUser.ActualSetPositon = 2;
-            return transform;
-        }
+            if (LoggedUser.ActualSetPositon == 0 && ss.Set == 1)
+            {
+                LoggedUser.TimerInProgress = true;
+                LoggedUser.ActualSetPositon = 2;
+                return true;
+            }
+            if (LoggedUser.ActualSetPositon == ss.Set)
+            {
+                LoggedUser.TimerInProgress = true;
+                LoggedUser.ActualSetPositon++;
+                return true;
+            }
+            else return false;
 
-        if (LoggedUser.ActualSetPositon == ss.Set)
-        {
-            LoggedUser.ActualSetPositon++;
-            return true;
         }
         else
         {
@@ -103,7 +112,7 @@ public class ExistingDBScript : MonoBehaviour
 
     private void ExistingDBScript_FireEvent(object sender, EventArgs e)
     {
-        //throw new NotImplementedException();
+        LoggedUser.TimerInProgress = false;
     }
 
     //private void ShowWhatWasCliked(DBTranning dbTranning)

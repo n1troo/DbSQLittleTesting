@@ -22,5 +22,7 @@ public partial class DBUsers
     [Ignore]
     public int ActualSetPositon { get; set; }
 
+    [Ignore]
+    public bool TimerInProgress { get; set; }
    
 }
