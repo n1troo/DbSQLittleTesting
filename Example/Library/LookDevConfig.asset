@@ -79,13 +79,13 @@ MonoBehaviour:
   - {fileID: 0}
   m_CameraState:
   - m_Pivot:
-      m_Target: {x: 0, y: 0, z: 0}
+      m_Target: {x: -0.1799409, y: 0.08999154, z: -0.003914833}
       speed: 2
-      m_Value: {x: 0, y: 0, z: 0}
+      m_Value: {x: -0.1799409, y: 0.08999154, z: -0.003914833}
     m_Rotation:
-      m_Target: {x: 0, y: 0, z: 0, w: 1}
+      m_Target: {x: -0.008999232, y: -0.011999226, z: -0.00010799597, w: 0.9998875}
       speed: 2
-      m_Value: {x: 0, y: 0, z: 0, w: 1}
+      m_Value: {x: -0.008999232, y: -0.011999226, z: -0.00010799597, w: 0.9998875}
     m_ViewSize:
       m_Target: 10
       speed: 2
@@ -118,13 +118,13 @@ MonoBehaviour:
       m_Value: 0
   m_CameraStateLeft:
     m_Pivot:
-      m_Target: {x: 0, y: 0, z: 0}
+      m_Target: {x: -0.1799409, y: 0.08999154, z: -0.003914833}
       speed: 2
-      m_Value: {x: 0, y: 0, z: 0}
+      m_Value: {x: -0.1799409, y: 0.08999154, z: -0.003914833}
     m_Rotation:
-      m_Target: {x: 0, y: 0, z: 0, w: 1}
+      m_Target: {x: -0.008999232, y: -0.011999226, z: -0.00010799597, w: 0.9998875}
       speed: 2
-      m_Value: {x: 0, y: 0, z: 0, w: 1}
+      m_Value: {x: -0.008999232, y: -0.011999226, z: -0.00010799597, w: 0.9998875}
     m_ViewSize:
       m_Target: 10
       speed: 2
