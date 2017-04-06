@@ -49,7 +49,7 @@ public class ExistingDBScript : MonoBehaviour
     /// </summary>
     private void AddPanelObjects()
     {        
-        LoggedUser = DataService.db.GetDbDBUsersByID(1);
+        LoggedUser = DataService.db.GetDbDBUsersByID(PlayerPrefs.GetInt("UserIdLogged"));
 
         GameObject Local = Instantiate(HeaderDateBox);
         Local.GetComponent<HeaderDateBox>().SetValues(LoggedUser);

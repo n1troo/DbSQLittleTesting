@@ -13,23 +13,34 @@ public partial class DataService
         _connection.CreateTable<DBUsers>();
         _connection.CreateTable<DBUserLevel>();
         _connection.CreateTable<DBTranning>();
+        _connection.CreateTable<DBUsersLogs>();
 
 
         var usr1 = CreateUser("Uzytkownik", "ABC");
         var usr1_lvl = CreateDefaultUserLvl(usr1);
 
-        var usr2 = CreateUser("Uzytkownik2", "CBA");
-        var usr2_lvl = CreateDefaultUserLvl(usr2);
-
         _connection.InsertAll(new[]
        {
             usr1_lvl,
-            usr2_lvl
         });
 
         CreateTranningTable();
+        CreateFirstUserLog(usr1);
+
 
         Debug.LogWarning("Utworzyłem tabele bazy dannych");
+    }
+
+    private void CreateFirstUserLog(DBUsers usr1)
+    {
+        var log = new DBUsersLogs
+        {
+            AddDate = DateTime.Now,
+            idUsers = usr1.idUsers,
+            Login = usr1.Login
+        };
+
+        _connection.Insert(log);
     }
 
     /// <summary>
