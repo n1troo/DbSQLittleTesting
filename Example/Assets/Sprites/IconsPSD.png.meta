@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: cae86bb5314d9404fb7e1a0fd053e49c
-timeCreated: 1493286765
+timeCreated: 1493299763
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,8 @@ TextureImporter:
     21300010: Icon_Kalendarz
     21300012: Icon_Odswiez
     21300014: Icon_ListyWyborow
+    21300016: Icon_Zarowka
+    21300018: Icon_Zakupy
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -194,6 +196,32 @@ TextureImporter:
         height: 176
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Icon_Zarowka
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 283
+        width: 177
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Icon_Zakupy
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 95
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
