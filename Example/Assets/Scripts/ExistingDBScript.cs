@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System;
 using SQLite4Unity3d;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class ExistingDBScript : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class ExistingDBScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }
 

@@ -18,8 +18,16 @@ public class LoginManager : MonoBehaviour {
         PlayerPrefs.SetInt("UserIdLogged", LoggedUser.idUsers);
     }
 
-    public void LogInToMenu()
+    private void Update()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Application.Quit();
+        }
+    }
+
+    public void LogInToMenu(int sceneNumber)
+    {
+        SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
     }
 }
