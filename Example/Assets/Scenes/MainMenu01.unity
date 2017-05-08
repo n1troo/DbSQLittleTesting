@@ -319,8 +319,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 829349140}
-  - component: {fileID: 829349142}
   - component: {fileID: 829349141}
+  - component: {fileID: 829349142}
   m_Layer: 5
   m_Name: UserNameText
   m_TagString: Untagged
@@ -366,7 +366,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ae14354209ed8814bae1166aceacc8a1, type: 3}
+    m_Font: {fileID: 12800000, guid: 6921baa61abc4f14cb3dee836b76ae34, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
