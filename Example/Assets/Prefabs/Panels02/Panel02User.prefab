@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 224321943057935516}
   - component: {fileID: 222849816154528384}
   - component: {fileID: 114532171212653268}
+  - component: {fileID: 114041494795294328}
   m_Layer: 5
   m_Name: PanelGroup
   m_TagString: Untagged
@@ -328,7 +329,7 @@ GameObject:
   - component: {fileID: 222146454951492300}
   - component: {fileID: 114089040156843052}
   m_Layer: 5
-  m_Name: UserTotalRepsMakedPanel (3)
+  m_Name: UserTotalRepsMakedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,6 +420,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114041494795294328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231448062615370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e58009038e0ca48ba456ecec7f1a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114043320794301552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -745,7 +757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!114 &114781697433288700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -805,7 +817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!114 &114803126779472294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -838,7 +850,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!114 &114822948787991374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1018,7 +1030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 0
 --- !u!114 &114907166800467542
 MonoBehaviour:
   m_ObjectHideFlags: 1

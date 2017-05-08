@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,10 +7,14 @@ using UnityEngine.SceneManagement;
 public class LoginManager : MonoBehaviour {
 
 
-    DBUsers LoggedUser { get; set; }
+    public static DBUsers LoggedUser { get; set; }
+    public static DBUsers GetUser()
+    {
+        return LoggedUser;
+    }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         //Pobieranie ostatnioZalogowanego uzytkownika
         LoggedUser = DataService.db.GetDbDBUsersByID(1);
