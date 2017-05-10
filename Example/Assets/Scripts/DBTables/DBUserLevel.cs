@@ -14,6 +14,7 @@ public class DBUserLevel : DataService
     public int TranningDay { get; set; }
     public int TranningLevel { get; set; }
     public int TranningSet { get; set; }
+    public int TranningRestTime { get; set; }
 
     //[Ignore]
     //public IEnumerable<DBTranning> DBTranning

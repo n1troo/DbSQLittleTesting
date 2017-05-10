@@ -386,6 +386,7 @@ public partial class DataService
             TranningLevel = 1,
             TranningSet = 1,
             TranningWeek = 1,
+            TranningRestTime = 120,
         };
 
         return t;

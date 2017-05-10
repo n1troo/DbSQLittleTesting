@@ -4,14 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoginManager : MonoBehaviour {
-
-
+public class LoginManager : MonoBehaviour
+{
     public static DBUsers LoggedUser { get; set; }
-    public static DBUsers GetUser()
-    {
-        return LoggedUser;
-    }
 
     // Use this for initialization
     void Start ()
@@ -27,12 +22,14 @@ public class LoginManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0)
         {
+            //Tutaj może być jakaś opcja z wylogowywaniem
             Application.Quit();
         }
     }
 
     public void LogInToMenu(int sceneNumber)
     {
+        //Zmiana sceny na jakaś inna, wszelkie pomocne dane zapamiętwane sa w PlayerPrefs także nie ma co wysyłać głupot.
         SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
     }
 }

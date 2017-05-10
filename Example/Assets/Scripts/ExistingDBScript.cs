@@ -14,7 +14,7 @@ public class ExistingDBScript : MonoBehaviour
     public GameObject HeaderDateBox;
     public GameObject ResultBox;
     public GameObject TimeBox;
-    
+
     public Text VersionText;
 
     private GameObject LocalTimeBox;
@@ -69,8 +69,6 @@ public class ExistingDBScript : MonoBehaviour
         }
     }
 
-
-
     private void ShowWhatWasCliked(GameObject localResult, DBTranning ss)
     {
         Debug.Log(LoggedUser.TimerInProgress);
@@ -102,7 +100,6 @@ public class ExistingDBScript : MonoBehaviour
                 return true;
             }
             else return false;
-
         }
         else
         {
@@ -118,18 +115,15 @@ public class ExistingDBScript : MonoBehaviour
 
     //private void ShowWhatWasCliked(DBTranning dbTranning)
     //{
-
     //    //if(ResultPanel.transform.childCount > 0)
     //    //{
     //    //    foreach (Transform ss in ResultPanel)
     //    //    {
     //    //        GameObject.DestroyObject(ss.gameObject);
     //    //    }
-    //    //}
-        
+    //    //}      
     //    //GameObject localResult = Instantiate(ResultBox);
     //    //localResult.name = user.Login;
-
     //    //foreach (Text ss in localResult.GetComponentsInChildren<Text>())
     //    //{
     //    //    if (ss.name == "Text_idUser")
@@ -141,8 +135,6 @@ public class ExistingDBScript : MonoBehaviour
     //    //        ss.GetComponent<Text>().text = "AddDate: " + user.AddDate.ToString();
     //    //    }
     //    //}
-
     //    //localResult.transform.SetParent(ResultPanel);
-
     //}
 }
