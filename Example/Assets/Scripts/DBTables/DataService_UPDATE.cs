@@ -8,8 +8,9 @@ public partial class DataService
     private void UpdateDBUsers(DBUsers uDane)
     {
     }
-    private void UpdateDBUsers(DBUserLevel uDane)
+    public void UpdateDBUserLevel(DBUserLevel DBUserLevel)
     {
+        DataService.db._connection.Update(DBUserLevel);
     }
 }
 

@@ -25,6 +25,11 @@ public partial class DataService
         return DataService.db._connection.Table<DBUsers>().Where(x => x.idUsers == idUsers).FirstOrDefault();
     }
 
+    public DBUserLevel GetDBUserLevel(int idUser)
+    {
+        return DataService.db._connection.Table<DBUserLevel>().Where(x => x.idUsers == idUser).FirstOrDefault();
+    }
+
     public IEnumerable<DBTranning> GetUserDBTranning(DBUsers l)
     {
         return DataService.db.GetDBTranningsAll()
