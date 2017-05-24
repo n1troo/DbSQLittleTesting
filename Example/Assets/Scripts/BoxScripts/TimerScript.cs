@@ -9,27 +9,33 @@ public class TimerScript : AutoReferencer<TimerScript>
     public Slider SliderTimer;
     public event EventHandler FireEvent;
     float timer = 0;
-    // Use this for initialization
+    public int RestTimeSec { get; set; }
+    public Text TextValue;
+
     IEnumerator TimerStart(GameObject localResult)
     {
-        SliderTimer.maxValue = 100;
+        SliderTimer.maxValue = RestTimeSec;
         SliderTimer.value = 0;
 
         while (true)
         {
-          
-            timer =+ 5;
+            //Debug.Log("CZAS: " + SliderTimer.value);
+            
             SliderTimer.value += timer;
+            TextValue.text = SliderTimer.value.ToString();
 
-            if(SliderTimer.value >= 100)
+            if (SliderTimer.value + 1 > RestTimeSec)
             {
-                Debug.Log("100%");
+                //Debug.Log("100%");
                 localResult.gameObject.GetComponent<Image>().color = Color.blue;
                 ChangeStatusThread();
+                
                 break;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1.0f);
+
+            timer = +1;
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using SQLite4Unity3d;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public partial class DBUsers
 {
@@ -24,5 +25,5 @@ public partial class DBUsers
 
     [Ignore]
     public bool TimerInProgress { get; set; }
-   
+
 }

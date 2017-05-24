@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Diagnostics;
 
 public class DBUserLevel : DataService
 {
@@ -15,6 +16,27 @@ public class DBUserLevel : DataService
     public int TranningLevel { get; set; }
     public int TranningSet { get; set; }
     public int TranningRestTime { get; set; }
+
+    public void SetTranningComplete()
+    {
+        DBUserLevel ulvl = DataService.db.GetDBUserLevel(idUsers);
+        
+        if(this.TranningDay == 3)
+        {
+            ulvl.TranningDay = 1;
+            ulvl.TranningWeek++;
+
+            TranningDay = 1;
+        }
+        else
+        {
+            ulvl.TranningDay++;
+            TranningDay++;
+        }
+
+        DataService.db.UpdateDBUserLevel(ulvl);
+    }
+
 
     //[Ignore]
     //public IEnumerable<DBTranning> DBTranning
