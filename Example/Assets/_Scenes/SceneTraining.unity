@@ -403,7 +403,6 @@ MonoBehaviour:
     type: 2}
   ResultBox: {fileID: 1379150558193882, guid: 740d17e775614a843827595381b69866, type: 2}
   TimeBox: {fileID: 1620360833979088, guid: a8f412e090ce4c2488252dff67d878b3, type: 2}
-  LoginManager: {fileID: 1447452225}
 --- !u!4 &1447452224
 Transform:
   m_ObjectHideFlags: 0
@@ -646,7 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9862069, g: 1, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
