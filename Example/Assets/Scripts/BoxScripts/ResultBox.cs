@@ -14,8 +14,8 @@ public class ResultBox : AutoReferencer<ResultBox>
 
     public void SetTranning(DBTranning ss)
     {
-        Text_Set.text = "Set: "+ ss.Set.ToString();
-        Text_Reps.text = "Reps: " + ss.Reps.ToString();
+        Text_Set.text = "SET: "+ ss.Set.ToString();
+        Text_Reps.text = "REPS: " + ss.Reps.ToString();
     }
 
     public void DestroyButton()
