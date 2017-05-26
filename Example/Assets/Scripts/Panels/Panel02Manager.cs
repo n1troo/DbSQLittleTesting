@@ -8,6 +8,7 @@ public class Panel02Manager : MonoBehaviour
     public Transform PanelContentMiddle;
     public GameObject Panel02User;
     public GameObject Panel02Settins;
+    public GameObject Panel02PushUPScheduler;
     // Use this for initialization
 
     private void Update()
@@ -33,12 +34,17 @@ public class Panel02Manager : MonoBehaviour
             }
         }
 
-        if (namePanel == "Panel02User"){
+        if (namePanel == "Panel02User")
+        {
             Local = Instantiate(Panel02User);
         }
         if (namePanel == "Panel02Settins")
         {
             Local = Instantiate(Panel02Settins);
+        }
+        if(namePanel == "Panel02PushUPScheduler")
+        {
+            Local = Instantiate(Panel02PushUPScheduler);
         }
 
         Local.transform.SetParent(PanelContentMiddle.transform, false);

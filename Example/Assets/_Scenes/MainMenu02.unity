@@ -137,8 +137,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1016931988}
-  - {fileID: 1691757128}
   - {fileID: 1778066676}
+  - {fileID: 1691757128}
   - {fileID: 499995009}
   - {fileID: 1686186319}
   m_Father: {fileID: 1016673169}
@@ -1340,7 +1340,7 @@ RectTransform:
   m_Children:
   - {fileID: 1743368633}
   m_Father: {fileID: 120952189}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1518,7 +1518,7 @@ GameObject:
   - component: {fileID: 1778066678}
   - component: {fileID: 1778066677}
   m_Layer: 5
-  m_Name: ButtonCalendar
+  m_Name: ButtonScheduler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1536,7 +1536,7 @@ RectTransform:
   m_Children:
   - {fileID: 1211338098}
   m_Father: {fileID: 120952189}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1581,7 +1581,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1778066678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1795984445}
+        m_MethodName: AddPanel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Panel02PushUPScheduler
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1778066678
@@ -1647,7 +1658,9 @@ MonoBehaviour:
   PanelContentMiddle: {fileID: 1279346057}
   Panel02User: {fileID: 1398182190148100, guid: 12154667f6be27b4f993294ed9db4a06,
     type: 2}
-  Panel02Settins: {fileID: 1792788273342746, guid: e1b438114a69af84395e7624a680b745,
+  Panel02Settins: {fileID: 1972326214936232, guid: e1b438114a69af84395e7624a680b745,
+    type: 2}
+  Panel02PushUPScheduler: {fileID: 1848642898412424, guid: 0f578bb9b31a51e4a8d39ecdbb18d300,
     type: 2}
 --- !u!4 &1795984446
 Transform:

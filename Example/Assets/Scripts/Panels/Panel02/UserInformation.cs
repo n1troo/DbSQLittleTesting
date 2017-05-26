@@ -34,7 +34,6 @@ public class UserInformation : MonoBehaviour
             {
                 groupPanel.GetComponentsInChildren<InputField>().FirstOrDefault().gameObject.GetComponentInChildren<Text>().text = localdbUser.TranningRestTime.ToString();
             }
-            
         }
     }
 
