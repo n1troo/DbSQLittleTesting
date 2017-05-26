@@ -26,10 +26,11 @@ public class TimerScript : AutoReferencer<TimerScript>
 
             if (SliderTimer.value + 1 > RestTimeSec)
             {
-                //Debug.Log("100%");
+                
                 localResult.gameObject.GetComponent<Image>().color = Color.blue;
                 ChangeStatusThread();
-                
+                yield return new WaitForSeconds(1.0f);
+                SliderTimer.value = 0;
                 break;
             }
 

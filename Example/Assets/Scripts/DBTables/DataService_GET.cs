@@ -39,4 +39,25 @@ public partial class DataService
                 s.Wekk == l.DBUserLevel.TranningWeek
                 ).OrderBy(s => (int)s.Set);
     }
+
+
+    public IEnumerable<Tranning> GetTableWithNowTrening(DBUsers l, int pweek)
+    {
+        List<Tranning> trening = new List<Tranning>();
+        foreach (var item in DataService.db.GetDBTranningsAll().
+            Where(s => s.Day == l.DBUserLevel.TranningDay && s.Wekk == pweek)
+            .OrderBy(s=>(int)s.Set)
+            .ThenBy(s => (int)s.Day))
+        {
+            trening.Add(new Tranning()
+            {
+                Day = item.Day,
+                Set = item.Set,
+                Level = item.Level,
+                Reps = item.Reps,   
+            });
+        }
+
+        return trening;
+    }
 }
