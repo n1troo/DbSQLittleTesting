@@ -11,6 +11,11 @@ public class Panel02Manager : MonoBehaviour
     public GameObject Panel02PushUPScheduler;
     // Use this for initialization
 
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 30;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

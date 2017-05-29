@@ -86,7 +86,7 @@ public partial class DataService
         _connection = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
         #endregion
 
-        Debug.Log("Final PATH: " + dbPath);
+        //Debug.Log("Final PATH: " + dbPath);
         return _connection = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
     }
 }
