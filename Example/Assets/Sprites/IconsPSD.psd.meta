@@ -1,23 +1,18 @@
 fileFormatVersion: 2
-guid: cae86bb5314d9404fb7e1a0fd053e49c
-timeCreated: 1493299763
+guid: 6e667b5f3478f1347b856f80a2af87e2
+timeCreated: 1496146287
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Icon_Czlowiek
-    21300002: Icon_Ustawienia
-    21300004: Icon_Slupki
-    21300006: Icon_Muzyka
-    21300008: Icon_StatystykiUzytkownikow
-    21300010: Icon_Kalendarz
-    21300012: Icon_Odswiez
-    21300014: Icon_ListyWyborow
-    21300016: Icon_Zarowka
-    21300018: Icon_Zakupy
+    21300000: IconsPSD_user
+    21300002: IconsPSD_settings
+    21300004: IconsPSD_scheduler
+    21300006: IconsPSD_ranking
+    21300008: IconsPSD_about
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -38,14 +33,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: 2
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 32
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -96,12 +91,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_Czlowiek
+      name: IconsPSD_user
       rect:
         serializedVersion: 2
-        x: 48
-        y: 282
-        width: 176
+        x: 45
+        y: 281
+        width: 181
         height: 181
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -109,119 +104,54 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icon_Ustawienia
+      name: IconsPSD_settings
       rect:
         serializedVersion: 2
-        x: 245
-        y: 282
-        width: 177
-        height: 177
+        x: 243
+        y: 281
+        width: 181
+        height: 181
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icon_Slupki
+      name: IconsPSD_scheduler
       rect:
         serializedVersion: 2
-        x: 441
-        y: 284
-        width: 177
-        height: 177
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_Muzyka
-      rect:
-        serializedVersion: 2
-        x: 634
-        y: 284
-        width: 176
-        height: 178
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_StatystykiUzytkownikow
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 97
-        width: 174
-        height: 177
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_Kalendarz
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 96
-        width: 175
-        height: 177
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_Odswiez
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 96
-        width: 176
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_ListyWyborow
-      rect:
-        serializedVersion: 2
-        x: 621
-        y: 96
-        width: 176
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_Zarowka
-      rect:
-        serializedVersion: 2
-        x: 828
-        y: 283
-        width: 177
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icon_Zakupy
-      rect:
-        serializedVersion: 2
-        x: 828
+        x: 232
         y: 95
-        width: 176
-        height: 176
+        width: 182
+        height: 181
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IconsPSD_ranking
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 95
+        width: 181
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IconsPSD_about
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 281
+        width: 181
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

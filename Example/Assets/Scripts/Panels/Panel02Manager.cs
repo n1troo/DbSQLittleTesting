@@ -35,6 +35,7 @@ public class Panel02Manager : MonoBehaviour
         {
             foreach (Transform ss in PanelContentMiddle)
             {
+                if(ss.name.Contains(namePanel)){ return; }
                 GameObject.DestroyObject(ss.gameObject);
             }
         }
