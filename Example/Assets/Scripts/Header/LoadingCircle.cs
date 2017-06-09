@@ -7,12 +7,11 @@ public class LoadingCircle : MonoBehaviour
 {
     public Text ClockName;
     public Text ClockValue;
-    public Color ClockProggresColor;
     public Image CircleImageComponent;
 
     private void Start()
     {
-        CircleImageComponent.color = ClockProggresColor;
+        
     }
 
     public void SetNameCircle(string valueName)
