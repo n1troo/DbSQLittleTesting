@@ -129,7 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClockName: {fileID: 114335331615397718}
   ClockValue: {fileID: 114425603318500160}
-  ClockProggresColor: {r: 0.53734887, g: 0.8308824, b: 0.49486378, a: 1}
   CircleImageComponent: {fileID: 114840756046207344}
 --- !u!114 &114177409278947668
 MonoBehaviour:

@@ -8,6 +8,8 @@ public class LoginManager : MonoBehaviour
 {
     public static DBUsers LoggedUser { get; set; }
 
+    public GameObject ProgressBars;
+
     // Use this for initialization
     void Start ()
     {
@@ -16,6 +18,9 @@ public class LoginManager : MonoBehaviour
         
         // Store value on a constante "score"
         PlayerPrefs.SetInt("UserIdLogged", LoggedUser.idUsers);
+        //Upgrade status header
+        ProgressBars.GetComponent<ProgressLoadingCircle>().UpdateProgressCircles(LoggedUser.DBUserLevel);
+
     }
 
     private void Update()
