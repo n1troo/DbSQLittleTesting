@@ -11,19 +11,19 @@ public class ChangeLogoColor : MonoBehaviour
     //przeźroczysty
     Color32 ColorTo = new Color32(255, 255, 255, 100);
     Color32 ColorFrom = new Color32(255, 255, 255, 255);
-    bool uruchom = false;
+    //bool uruchom = false;
 
 
-    IEnumerator Start()
-    {
-        yield return new WaitForSeconds(2f);
-        uruchom = true;
-    }
+    //IEnumerator Start()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    uruchom = true;
+    //}
 
     void Update()
     { 
-        if(uruchom)
-            ImageToTransform.color = Color.LerpUnclamped(ColorFrom, ColorTo, Mathf.PingPong(Time.time / 1.8f, 1f));
+        //if(uruchom)
+            ImageToTransform.color = Color.Lerp(ColorFrom, ColorTo, Mathf.PingPong(Time.time / 2f, 1f));
 
     }
 }

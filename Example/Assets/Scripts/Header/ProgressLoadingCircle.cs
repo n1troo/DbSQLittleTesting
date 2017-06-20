@@ -19,20 +19,19 @@ public class ProgressLoadingCircle : MonoBehaviour
     public void UpdateProgressCircles(DBUserLevel uslvl)
     {
         //UPDATE DAY
-        float day = (uslvl.TranningDay * uslvl.TranningWeek);
+        float day = ((uslvl.TranningWeek * 3) - 3 )  + uslvl.TranningDay;
         DayText.text = string.Format("{0}/18",day.ToString());
-        Radial_Day.fillAmount = (18f * day) / 100;
+        Radial_Day.fillAmount =  ((day * 100f) / 18f) / 100;
 
         //UPDATE WEEK
         float week = uslvl.TranningWeek;
         WeekText.text = string.Format("{0}/6", week.ToString());
-        Radial_Week.fillAmount = (6f * week) / 100;
-
+        Radial_Week.fillAmount = (week / 6f);
+       
         //UPDATE LEVEL
         float level = uslvl.TranningLevel;
-        WeekText.text = string.Format("{0}/3", level.ToString());
-        Radial_Week.fillAmount = (3f * level) / 100;
-
+        LevelText.text = string.Format("{0}/3", level.ToString());
+        Radial_Level.fillAmount = level / 3f ;
 
 
 

@@ -19,7 +19,10 @@ public class LoginManager : MonoBehaviour
         // Store value on a constante "score"
         PlayerPrefs.SetInt("UserIdLogged", LoggedUser.idUsers);
         //Upgrade status header
-        ProgressBars.GetComponent<ProgressLoadingCircle>().UpdateProgressCircles(LoggedUser.DBUserLevel);
+
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+            ProgressBars.GetComponent<ProgressLoadingCircle>().UpdateProgressCircles(LoggedUser.DBUserLevel);
 
     }
 
