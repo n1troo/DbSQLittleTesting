@@ -13,8 +13,6 @@ public class TimerScript : AutoReferencer<TimerScript>
     public AudioClip audioClipFinish;
     AudioSource audioSource;
 
-    float timer = 0;
-
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -28,24 +26,20 @@ public class TimerScript : AutoReferencer<TimerScript>
         while (true)
         {
             //Debug.Log("CZAS: " + SliderTimer.value);
-            
-            SliderTimer.value += timer;
+
+            SliderTimer.value += 1;
             TextValue.text = SliderTimer.value.ToString();
+            yield return new WaitForSeconds(1.0f);
 
             if (SliderTimer.value + 1 > RestTimeSec)
             {
                 //Tick row is done
-                localResult.gameObject.GetComponent<Image>().color = Color.blue;
                 localResult.gameObject.GetComponent<Image>().enabled = true;
+                SliderTimer.value = 0;               
                 ChangeStatusThread();
-                yield return new WaitForSeconds(1.0f);
-                SliderTimer.value = 0;
+                TextValue.text = "0";
                 break;
-            }
-
-            yield return new WaitForSeconds(1.0f);
-
-            timer = +1;
+            }   
         }
     }
 
