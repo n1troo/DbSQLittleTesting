@@ -10,7 +10,7 @@ public class TimerScript : AutoReferencer<TimerScript>
     public event EventHandler FireEvent; 
     public int RestTimeSec { get; set; }
     public Text TextValue;
-    public AudioClip audioClipFinish;
+    //public AudioClip audioClipFinish;
     AudioSource audioSource;
 
     private void Start()

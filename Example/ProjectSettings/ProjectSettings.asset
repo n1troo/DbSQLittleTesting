@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: n1trooV4
-  productName: 100pushupsGo
+  companyName: com.n1troo
+  productName: PushUpsGO_100
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -137,7 +137,7 @@ PlayerSettings:
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   applicationIdentifier:
-    Android: com.n1troo.DbSQLittleTesting
+    Android: com.n1troo.PushUpsGO_100
     Standalone: unity.DefaultCompany.Example
     Tizen: com.n1troo.DbSQLittleTesting
     iOS: com.n1troo.DbSQLittleTesting
@@ -218,8 +218,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/iprafnow/Documents/GitHub/DbSQLittleTesting/Example/pushupsh100Kyes.keystore
+  AndroidKeyaliasName: 100pushupsgo
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
