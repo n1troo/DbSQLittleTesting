@@ -9,6 +9,7 @@ public class Panel02Manager : MonoBehaviour
     public GameObject Panel02User;
     public GameObject Panel02Settins;
     public GameObject Panel02PushUPScheduler;
+    public GameObject Panel02About;
     // Use this for initialization
 
 
@@ -22,6 +23,12 @@ public class Panel02Manager : MonoBehaviour
         {
             SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
+    }
+
+    private void Start()
+    {
+        //Adding FIRST PANEL
+        AddPanel("Panel02User");
     }
 
     /// <summary>
@@ -44,13 +51,17 @@ public class Panel02Manager : MonoBehaviour
         {
             Local = Instantiate(Panel02User);
         }
-        if (namePanel == "Panel02Settins")
+        else if (namePanel == "Panel02Settins")
         {
             Local = Instantiate(Panel02Settins);
         }
-        if(namePanel == "Panel02PushUPScheduler")
+        else if(namePanel == "Panel02PushUPScheduler")
         {
             Local = Instantiate(Panel02PushUPScheduler);
+        }
+        else if (namePanel == "Panel02About")
+        {
+            Local = Instantiate(Panel02About);
         }
 
         Local.transform.SetParent(PanelContentMiddle.transform, false);

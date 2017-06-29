@@ -18,7 +18,7 @@ public class UserInformation : MonoBehaviour
         DBUserLevel localdbUser = LoginManager.LoggedUser.DBUserLevel;
         foreach (Transform groupPanel in this.GetComponentInChildren<Transform>())
         {
-            Debug.Log(groupPanel.name);
+            //Debug.Log(groupPanel.name);
             if (groupPanel.name == "UserLevelPanel") {
                 groupPanel.GetComponentsInChildren<Text>().Where(s => s.name == "Text_Level").FirstOrDefault().text = localdbUser.TranningLevel.ToString();
             }
