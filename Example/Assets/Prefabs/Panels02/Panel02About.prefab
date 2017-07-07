@@ -195,18 +195,18 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 18
+    m_MaxSize: 30
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "0. Before you dive in and start, you should obtain medical advice and clearance
-    from your doctor!\n\n1. Before week 1 \nI recommend taking a couple of days to
+  m_Text: "0) Before you dive in and start, you should obtain medical advice and clearance
+    from your doctor!\n\n1) Before week 1 \nI recommend taking a couple of days to
     familiarize yourself with the program and recover from the exertion of the initial
-    test\n\n2. You'll be required to work out three times per week:\nThe best option
-    is Monday, Wednesday, Friday\n\n3. Initial test will highlight your current fitness
+    test\n\n2) You'll be required to work out three times per week:\nThe best option
+    is Monday, Wednesday, Friday\n\n3) Initial test will highlight your current fitness
     level and determine where to start and how to plan your pushups training program."
 --- !u!222 &222313485881413694
 CanvasRenderer:

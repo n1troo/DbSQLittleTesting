@@ -23,7 +23,7 @@ public class ChangeLogoColor : MonoBehaviour
     void Update()
     { 
         //if(uruchom)
-            ImageToTransform.color = Color.Lerp(ColorFrom, ColorTo, Mathf.PingPong(Time.time / 2f, 1f));
+            ImageToTransform.color = Color.Lerp(ColorFrom, ColorTo, Mathf.PingPong(Time.time / 1f, 1f));
 
     }
 }

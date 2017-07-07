@@ -264,7 +264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONTINUE
+  m_Text: INITIAL TEST
 --- !u!222 &386982686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +478,6 @@ RectTransform:
   - {fileID: 1016931988}
   - {fileID: 1994734647}
   - {fileID: 829349140}
-  - {fileID: 2041861224}
   - {fileID: 1625926631}
   m_Father: {fileID: 1977085313}
   m_RootOrder: 0
@@ -708,7 +707,7 @@ Prefab:
     - target: {fileID: 224455626756060888, guid: b3470c05d0ac9a942a4fdf8cb69934de,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224455626756060888, guid: b3470c05d0ac9a942a4fdf8cb69934de,
         type: 2}
@@ -907,10 +906,10 @@ RectTransform:
   m_Father: {fileID: 1016673169}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.34679168}
-  m_AnchorMax: {x: 1, y: 0.46300003}
-  m_AnchoredPosition: {x: 0.25, y: 1}
-  m_SizeDelta: {x: 0, y: 2}
+  m_AnchorMin: {x: 0.0686875, y: 0.21400002}
+  m_AnchorMax: {x: 0.9278751, y: 0.46300003}
+  m_AnchoredPosition: {x: 1, y: 1}
+  m_SizeDelta: {x: 0, y: -0.30000305}
   m_Pivot: {x: 0.5, y: 0.9999999}
 --- !u!114 &1994734648
 MonoBehaviour:
@@ -937,14 +936,20 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 60
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Welcome Back!
+  m_Text: 'HELLO!
+
+    Before you dive in and start, you should obtain medical advice and clearance from
+    your doctor!
+
+
+    To perform the INITIAL TEST, simply execute as many good-form pushups as you can'
 --- !u!222 &1994734649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -963,71 +968,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProgressBars: {fileID: 0}
---- !u!1 &2041861223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2041861224}
-  - component: {fileID: 2041861226}
-  - component: {fileID: 2041861225}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2041861224
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2041861223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1016673169}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.56, y: 235.59}
-  m_SizeDelta: {x: 293.96, y: 291.14}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2041861225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2041861223}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.92063147, g: 0.92978203, b: 0.9485294, a: 0.153}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 04ccad934b69f0f4a93427c5ec075a36, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &2041861226
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2041861223}
